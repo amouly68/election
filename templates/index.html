@@ -14,8 +14,18 @@
         <button id="all-blue">All Blue</button>
     </div>
     <div id="counter">
-        <p>Democrats: <span id="elector-count-democrats">0</span></p>
-        <p>Republicans: <span id="elector-count-republicans">0</span></p>
+        <div class="bar-container">
+            <div class="bar-label">Democrats</div>
+            <div class="bar" id="bar-democrats"></div>
+            <div class="bar-threshold"></div>
+            <span id="elector-count-democrats">0</span>
+        </div>
+        <div class="bar-container">
+            <div class="bar-label">Republicans</div>
+            <div class="bar" id="bar-republicans"></div>
+            <div class="bar-threshold"></div>
+            <span id="elector-count-republicans">0</span>
+        </div>
     </div>
     <div id="map-container" style="width: 100%; height: auto;"></div> 
     <div id="tooltip" style="position: absolute; display: none; background-color: #333; color: white; padding: 5px; border-radius: 3px; font-size: 12px;"></div>

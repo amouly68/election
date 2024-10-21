@@ -1,22 +1,92 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
 h1 {
-    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #controls {
-    margin: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 #counter {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.bar-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.bar {
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 5px;
+}
+
+.bar-label {
+    position: absolute;
+    left: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+#bar-democrats {
+    background-color: blue;
+    width: 0%;
+}
+
+#bar-republicans {
+    background-color: red;
+    width: 0%;
+}
+
+.bar-threshold {
+    position: absolute;
+    top: 0;
+    height: 100%; /* Prend la hauteur du conteneur de la barre */
+    width: 2px;
+    background-color: black;
+    left: calc(270 / 538 * 100%);
+    z-index: 2;
+    transform: translateX(-1px); /* Ajuste la position pour centrer */
+}
+
+
+#tooltip {
+    position: absolute;
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    pointer-events: none;
 }
 
 #map-container {
@@ -26,23 +96,9 @@ h1 {
     overflow: hidden;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    #counter {
-        font-size: 12px;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 12px;
-    }
-}
-
-#tooltip {
-    z-index: 10;
+svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }

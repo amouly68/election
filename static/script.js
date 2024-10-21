@@ -27,9 +27,7 @@ function initializeStates() {
         // Ajoute un événement pour le survol (hover) de l'état
         state.addEventListener('mouseover', (event) => {
             const stateName = state.getAttribute('data-name');
-            console.log("stateName: " + stateName);
             const electors = getElectorsForState(stateName);
-            console.log("electors: " + electors);
             tooltip.style.display = 'block';
             tooltip.textContent = `${stateName}: ${electors} grands électeurs`;
         });
@@ -111,6 +109,8 @@ function updateStateColor(state, color) {
 function updateElectorCount(data) {
     const electorCountDemocrats = document.getElementById('elector-count-democrats');
     const electorCountRepublicans = document.getElementById('elector-count-republicans');
+    const barDemocrats = document.getElementById('bar-democrats');
+    const barRepublicans = document.getElementById('bar-republicans');
     let totalDemocrats = 0;
     let totalRepublicans = 0;
 
@@ -124,6 +124,13 @@ function updateElectorCount(data) {
 
     electorCountDemocrats.textContent = totalDemocrats;
     electorCountRepublicans.textContent = totalRepublicans;
+
+    // Mise à jour des barres
+    const percentageDemocrats = (totalDemocrats / 538) * 100;
+    const percentageRepublicans = (totalRepublicans / 538) * 100;
+
+    barDemocrats.style.width = `${percentageDemocrats}%`;
+    barRepublicans.style.width = `${percentageRepublicans}%`;
 }
 
 
