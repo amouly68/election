@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#controls {
+    margin: 20px;
+}
+
+#counter {
+    margin: 20px;
+}
+
+#map-container {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    overflow: hidden;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #counter {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+#tooltip {
+    z-index: 10;
+}
