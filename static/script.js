@@ -27,6 +27,7 @@ function initializeStates() {
         // Ajoute un événement pour le survol (hover) de l'état
         state.addEventListener('mouseover', (event) => {
             const stateName = state.getAttribute('data-name');
+            console.log('state name : ' + stateName);
             const electors = getElectorsForState(stateName);
             tooltip.style.display = 'block';
             tooltip.textContent = `${stateName}: ${electors} grands électeurs`;
@@ -146,6 +147,7 @@ function getElectorsForState(stateName) {
         "Colorado": {"electors": 10},
         "Connecticut": {"electors": 7},
         "Delaware": {"electors": 3},
+        "District of Columbia": {"electors": 3},
         "Florida": {"electors": 30},
         "Georgia": {"electors": 16},
         "Hawaii": {"electors": 4},
@@ -188,7 +190,6 @@ function getElectorsForState(stateName) {
         "West Virginia": {"electors": 4},
         "Wisconsin": {"electors": 10},
         "Wyoming": {"electors": 3},
-        "District of Columbia": {"electors": 3}
     };
 
     return statesData[stateName] ? statesData[stateName].electors : 0;
